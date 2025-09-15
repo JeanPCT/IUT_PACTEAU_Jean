@@ -5,6 +5,8 @@
 #include "IO.h"
 #include "timer.h"
 #include "pwm.h"
+#include "robot.h"
+#include "adc.h"
 
 int main (void){
     /***********************************************************************************************/
@@ -28,8 +30,12 @@ int main (void){
     LED_ROUGE_2 = 1;
     LED_VERTE_2 = 1;
     
+    //InitTimer23();
+    //InitTimer1();
+
     InitPWM();
-    //PWMSetSpeed(20);
+    //PWMSetSpeedConsigne(20,MOTEUR_DROIT);
+    //PWMSetSpeedConsigne(-20,MOTEUR_GAUCHE);
     /***********************************************************************************************/
     // Boucle Principale
     /***********************************************************************************************/
