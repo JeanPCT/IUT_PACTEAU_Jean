@@ -29,11 +29,15 @@ int main (void){
     LED_ORANGE_2 = 1;
     LED_ROUGE_2 = 1;
     LED_VERTE_2 = 1;
+   
     
+    InitADC1();
     //InitTimer23();
-    //InitTimer1();
-
-    InitPWM();
+    InitTimer1();
+    
+    unsigned int ADCValue0, ADCValue1, ADCValue2;
+    unsigned int * result = ADCGetResult();
+    //InitPWM();
     //PWMSetSpeedConsigne(20,MOTEUR_DROIT);
     //PWMSetSpeedConsigne(-20,MOTEUR_GAUCHE);
     /***********************************************************************************************/
@@ -41,6 +45,11 @@ int main (void){
     /***********************************************************************************************/
     while(1)
     {
-        
+        if (ADCIsConversionFinished() == 1) {
+            ADCClearConversionFinishedFlag();
+            ADCValue0 = result[0]; 
+            ADCValue1 = result[1]; 
+            ADCValue2 = result[2]; 
+        }
     } // fin main
 }
