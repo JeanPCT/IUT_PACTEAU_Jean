@@ -5,9 +5,6 @@
         <group>
             <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/main.c</file>
             <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/timer.c</file>
-            <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/pwm.h</file>
-            <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/pwm.c</file>
-            <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/robot.h</file>
             <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/ADC.c</file>
             <file>file:/C:/Github/IUT_PACTEAU_Jean/Embedded/ROBOT_PACTEAU.X/adc.h</file>
         </group>
