@@ -32,6 +32,7 @@
       <itemPath>toolbox.c</itemPath>
       <itemPath>pwm.c</itemPath>
       <itemPath>ADC.c</itemPath>
+      <itemPath>QEI.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

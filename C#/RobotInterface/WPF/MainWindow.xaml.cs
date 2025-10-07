@@ -8,6 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExtendedSerialPort_NS;
+using System.IO.Ports;
+using System.Runtime.CompilerServices;
 
 namespace WPF
 {
@@ -16,8 +19,11 @@ namespace WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        ExtendedSerialPort serialPort1;
         public MainWindow()
         {
+            serialPort1 = new ExtendedSerialPort("COM6",115200,Parity.None,8,StopBits.One);
+            serialPort1.Open();
             InitializeComponent();
         }
         int backChange = 0;
@@ -33,27 +39,25 @@ namespace WPF
                 buttonEnvoyer.Background = Brushes.RoyalBlue;
                 backChange = 0;
             }*/
-         
+            SendMessage();
+        }
+
+        private void textBoxEmission_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) {
+                SendMessage();
+            }
+        }
+        private void SendMessage()
+        {
             string message = textBoxEmission.Text;
             if (!string.IsNullOrWhiteSpace(message))
             {
                 RichTextBox.AppendText(Environment.NewLine + "Reçu : " + message);
                 textBoxEmission.Clear();
             }
+            serialPort1.Write(message);
 
-        }
-
-        private void textBoxEmission_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) {
-                string message = textBoxEmission.Text;
-                if (!string.IsNullOrWhiteSpace(message))
-                {
-                    RichTextBox.AppendText(Environment.NewLine + "Reçu : " + message);
-                    textBoxEmission.Clear();
-                }
-
-            }
         }
     }
 }
