@@ -22,7 +22,7 @@ namespace WPF
         ExtendedSerialPort serialPort1;
         public MainWindow()
         {
-            serialPort1 = new ExtendedSerialPort("COM6",115200,Parity.None,8,StopBits.One);
+            serialPort1 = new ExtendedSerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             serialPort1.Open();
             InitializeComponent();
         }
